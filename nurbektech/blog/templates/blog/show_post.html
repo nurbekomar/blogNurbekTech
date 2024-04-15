@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<nav class="nav">
+    <a class="nav-link active" aria-current="page" href="{% url "blog" %}">All</a>
+    {% for c in cats %}
+        <a class="nav-link active" aria-current="page" href="{{ c.get_absolute_url }}">{{c.name}}</a>
+    {% endfor %}
+</nav>
+<h1>{{post.title}}</h1>
+{% endblock content %}
