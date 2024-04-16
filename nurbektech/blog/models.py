@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
@@ -8,7 +10,7 @@ class Blog(models.Model):
     slug = models.SlugField(
         max_length=255, unique=True, db_index=True, verbose_name="URL", null=True
     )
-    content = models.TextField(blank=True)
+    content = RichTextUploadingField()
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=True)
