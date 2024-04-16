@@ -135,13 +135,47 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+
 CKEDITOR_CONFIGS = {
     "default": {
         "toolbar": "full",
-        "width": "auto",
         "extraPlugins": ",".join(
             [
                 "codesnippet",
+                "widget",
+                "dialog",
+            ]
+        ),
+    },
+    "comment": {
+        "toolbar_Full": [
+            [
+                "Styles",
+                "Format",
+                "Bold",
+                "Italic",
+                "Underline",
+                "Strike",
+                "SpellChecker",
+                "Undo",
+                "Redo",
+            ],
+            ["Link", "Unlink", "Anchor"],
+            ["Image", "Flash", "Table", "HorizontalRule"],
+            ["TextColor", "BGColor"],
+            ["Smiley", "SpecialChar"],
+            ["Source"],
+            ["JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock"],
+            ["NumberedList", "BulletedList"],
+            ["Indent", "Outdent"],
+            ["Maximize"],
+            ["CodeSnippet"],
+        ],
+        "extraPlugins": ",".join(
+            [
+                "codesnippet",
+                "widget",
+                "dialog",
             ]
         ),
     },
