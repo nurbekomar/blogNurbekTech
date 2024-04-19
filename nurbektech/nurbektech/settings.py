@@ -82,9 +82,9 @@ WSGI_APPLICATION = "nurbektech.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "dbblog",
-        "USER": "nurbek",
-        "PASSWORD": "1234",
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
         "HOST": "localhost",
         "PORT": "",
     }
